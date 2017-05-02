@@ -35,9 +35,9 @@ public class Negocio {
         for (int fila = 1; fila < sheet.getRows(); fila++) { //recorremos las filas
             for (int columna = 0; columna < sheet.getColumns(); columna++) { //recorremos las columnas
                 nombre = sheet.getCell(columna, fila).getContents(); //setear la celda leida a nombre
-                if(!nombre.isEmpty()){
-                                    this.enviarCorreos(correoEmisor, contraseña, nombre, subject, mensaje);
-                }
+                
+                    this.enviarCorreos(correoEmisor, contraseña, nombre, subject, mensaje);
+                
 
             }
         }

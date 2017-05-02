@@ -42,6 +42,6 @@
     }
 
     
-            
+    response.sendRedirect("../login.jsp");         
 
 %>     
