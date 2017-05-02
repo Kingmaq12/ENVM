@@ -35,7 +35,10 @@ public class Negocio {
         for (int fila = 1; fila < sheet.getRows(); fila++) { //recorremos las filas
             for (int columna = 0; columna < sheet.getColumns(); columna++) { //recorremos las columnas
                 nombre = sheet.getCell(columna, fila).getContents(); //setear la celda leida a nombre
-                this.enviarCorreos(correoEmisor, contraseña, nombre, subject, mensaje);
+                if(!nombre.isEmpty()){
+                                    this.enviarCorreos(correoEmisor, contraseña, nombre, subject, mensaje);
+                }
+
             }
         }
         
@@ -44,7 +47,7 @@ public class Negocio {
     
     private void enviarCorreos (String correoEmisor, String contraseña,String correoReceptor ,String Subject,String mensaje){
         
-        SendEmail n = new SendEmail(correoEmisor, contraseña, correoEmisor, Subject, mensaje);
+        SendEmail n = new SendEmail(correoEmisor, contraseña, correoReceptor, Subject, mensaje);
         
     }
     
