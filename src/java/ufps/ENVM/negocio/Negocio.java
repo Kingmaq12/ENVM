@@ -44,7 +44,8 @@ public class Negocio {
     
     private void enviarCorreos (String correoEmisor, String contraseña,String correoReceptor ,String Subject,String mensaje){
         
-        SendEmail n = new db.SendEmail(correoEmisor, contraseña, correoReceptor, Subject, mensaje);
+        SendEmail n = new SendEmail(correoEmisor, contraseña, correoEmisor, Subject, mensaje);
+        
     }
     
 }
